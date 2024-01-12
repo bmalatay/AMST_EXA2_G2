@@ -2,7 +2,8 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class SuperheroApi {
-  final String baseUrl = 'https://www.superheroapi.com/api.php/1756437904858215';
+  final String baseUrl =
+      'https://www.superheroapi.com/api.php/1756437904858215';
 
   Future<List<dynamic>> searchHeroes(String query) async {
     final response = await http.get(Uri.parse('$baseUrl/search/$query'));

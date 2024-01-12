@@ -14,20 +14,20 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class MainPage extends StatelessWidget {
   final TextEditingController searchController = TextEditingController();
 
   static const String materia = 'Aplicaciones Móviles y Servicios Telemáticos';
   static const String evaluacion = 'Segunda Evaluación Práctica';
-  static const String integrantes = 'David Torres, Brank Malatay, Leiver Blacio';
+  static const String integrantes =
+      'David Torres, Brank Malatay, Leiver Blacio';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          materia,
+          'SuperHeroAPI',
           style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -46,25 +46,51 @@ class MainPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
+                materia,
+                style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.normal,
+                    color: Colors.white),
+              ),
+              const Text(
                 evaluacion,
-                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.white),
+                style: TextStyle(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
               ),
-              Text(
-                'Integrantes: $integrantes',
-                style: TextStyle(color: Colors.white),
+              const Text(
+                'Integrantes:',
+                style: TextStyle(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
               ),
-              SizedBox(height: 20),
+              const Text(
+                integrantes,
+                style: TextStyle(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
+              const SizedBox(height: 50),
+              const Text(
+                'Buscar héroe...',
+                style: TextStyle(
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
               TextField(
                 controller: searchController,
-                decoration: InputDecoration(
-                  labelText: 'Buscar héroe:',
+                decoration: const InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
                   border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -77,9 +103,9 @@ class MainPage extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   primary: Colors.grey, // Color de fondo del botón
                 ),
-                child: Text(
+                child: const Text(
                   'Buscar',
-                  style: TextStyle(color: Colors.yellow),
+                  style: TextStyle(color: Colors.white),
                 ),
               ),
             ],
